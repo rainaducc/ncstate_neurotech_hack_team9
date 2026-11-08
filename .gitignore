@@ -5,3 +5,6 @@ audit/
 *.pyc
 .DS_Store
 node_modules/
+sessions/
+live_reports/
+agent/data/

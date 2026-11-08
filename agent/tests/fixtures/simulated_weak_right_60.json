@@ -1,0 +1,161 @@
+{
+  "schema_version": "neurosym-report-0.4",
+  "header": "Research prototype - not a diagnosis - for clinician review.",
+  "recording_id": "eegmmidb:S001-sim-weak-right-60",
+  "simulated": {
+    "base_recording": "eegmmidb:S001",
+    "weak_hemisphere": "right",
+    "erd_reduction": 0.6,
+    "level": "trial"
+  },
+  "context": {
+    "site": "eegmmidb"
+  },
+  "data_quality": {
+    "qc_passed": true,
+    "qc_reasons": [],
+    "n_trials": 90
+  },
+  "features": [
+    {
+      "name": "execute_mu_li_left",
+      "value": -0.42640679045211116,
+      "z": -0.2813187987167852,
+      "percentile": 38.92329464986123
+    },
+    {
+      "name": "execute_mu_li_right",
+      "value": 1.5754761934425923,
+      "z": 1.3051358510788946,
+      "percentile": 90.40767035415836
+    },
+    {
+      "name": "execute_mu_sym",
+      "value": -1.8979315856981045,
+      "z": -1.366790550206311,
+      "percentile": 8.584548280274978
+    },
+    {
+      "name": "execute_beta_li_left",
+      "value": -1.4168462138664142,
+      "z": -1.635867205078655,
+      "percentile": 5.093369146373827
+    },
+    {
+      "name": "execute_beta_li_right",
+      "value": 1.8865312566683528,
+      "z": 1.816472028894802,
+      "percentile": 96.53510025675222
+    },
+    {
+      "name": "execute_beta_sym",
+      "value": -1.926963699798657,
+      "z": -2.2517121708064183,
+      "percentile": 1.2170233518371192
+    },
+    {
+      "name": "imagine_mu_li_left",
+      "value": -3.422101675321099,
+      "z": -2.5744377011086037,
+      "percentile": 0.5020158314642865
+    },
+    {
+      "name": "imagine_mu_li_right",
+      "value": 1.9249517379978358,
+      "z": 1.0185894860401468,
+      "percentile": 84.58010510834603
+    },
+    {
+      "name": "imagine_mu_sym",
+      "value": -1.7326476314351758,
+      "z": -0.9779497779521454,
+      "percentile": 16.404958191885072
+    },
+    {
+      "name": "imagine_beta_li_left",
+      "value": -0.6537403654538748,
+      "z": -1.0627854340430374,
+      "percentile": 14.39396332769871
+    },
+    {
+      "name": "imagine_beta_li_right",
+      "value": 0.7343603096680643,
+      "z": 0.44594439099047245,
+      "percentile": 67.21812922813339
+    },
+    {
+      "name": "imagine_beta_sym",
+      "value": -0.8546677269729301,
+      "z": -0.7504294134980944,
+      "percentile": 22.649806072365365
+    }
+  ],
+  "deviation_score": 3.6880966225358964,
+  "scores": {
+    "omnibus": {
+      "value": 3.6880966225358964,
+      "conformal_p": 0.3375
+    },
+    "maxz": {
+      "value": 2.5744377011086037,
+      "conformal_p": 0.175
+    },
+    "within": {
+      "value": 4.761533537303828,
+      "conformal_p": 0.025
+    }
+  },
+  "within_subject_permutation_p": 0.000999000999000999,
+  "p_value": 0.0375,
+  "n_calibration": 79,
+  "answer": "OUTSIDE_NORMATIVE_RANGE_REVIEW",
+  "decision_rule": {
+    "combination": "conformal p of min over component conformal p-values",
+    "review_if_p_below": 0.05,
+    "within_if_p_above": 0.2,
+    "otherwise": "INCONCLUSIVE_REPEAT",
+    "qc_fail_or_halves_disagree": "INCONCLUSIVE_REPEAT"
+  },
+  "consistency": {
+    "status": "agree",
+    "odd_p_value": 0.1,
+    "even_p_value": 0.1
+  },
+  "top_contributors": [
+    {
+      "feature": "imagine_mu_li_left",
+      "contribution_to_distance_squared": 6.229571924313622,
+      "z": -2.5744377011086037
+    },
+    {
+      "feature": "execute_beta_sym",
+      "contribution_to_distance_squared": 2.818437525698007,
+      "z": -2.2517121708064183
+    },
+    {
+      "feature": "imagine_mu_li_right",
+      "contribution_to_distance_squared": 1.3451621042027175,
+      "z": 1.0185894860401468
+    },
+    {
+      "feature": "execute_mu_li_right",
+      "contribution_to_distance_squared": 1.0585308016662287,
+      "z": 1.3051358510788946
+    },
+    {
+      "feature": "execute_beta_li_right",
+      "contribution_to_distance_squared": 0.9399814696408034,
+      "z": 1.816472028894802
+    }
+  ],
+  "limitations": [
+    "Reference is 1 public dataset (PhysioNet EEGMMIDB) with no age, sex or handedness covariates.",
+    "Smallest attainable p-value is 1/(n_cal+1) = 0.0125.",
+    "Half-recording p-values use the full-recording calibration and are noisier by construction."
+  ],
+  "audit": {
+    "model_version": "0.1.0",
+    "backend": "gaussian_ols_intercept+ledoitwolf",
+    "model_sha256": "e0d40bcdd9ed1e1b31eeecedb62da7e29024aae910da173c6688102bc7c1d080"
+  }
+}

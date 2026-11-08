@@ -1,0 +1,32 @@
+/* Cued movement session. NeuroBridge tokens; the full-screen cue view uses the deep ink colour so the
+   screen is calm and low-glare (the visual system should change as little as possible between cues). */
+.ms-stage{text-align:left}
+.ms-stage h2{margin:10px 0 8px}
+.ms-modes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 16px}
+.ms-mode{font:inherit;text-align:left;padding:14px 16px;background:var(--white);border:1px solid var(--line);color:var(--ink);cursor:pointer}
+.ms-mode b{display:block;font-size:14px;font-weight:600}
+.ms-mode small{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.ms-mode.on{border-color:var(--blue);box-shadow:inset 3px 0 0 var(--blue);background:var(--lightblue)}
+.ms-check{display:flex;gap:12px;align-items:flex-start;margin:6px 0 16px;font-size:14px;cursor:pointer}
+.ms-check input{margin-top:3px}
+.ms-check small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+.ms-preview{position:relative;width:240px;max-width:100%;aspect-ratio:4/3;background:var(--ink);margin:0 0 18px;overflow:hidden}
+.ms-preview video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.ms-preview span{position:absolute;left:8px;bottom:6px;font-size:10px;letter-spacing:.6px;color:#e8efe9;text-transform:uppercase}
+.ms-ok{color:#4f7a5c!important}.ms-warn{color:#9b7a4f!important}.ms-bad{color:#a65f45!important}
+.ms-tight{margin:8px 0!important}
+
+.ms-overlay{position:fixed;inset:0;z-index:1000;background:#1f3236;color:#eef1ea;display:flex;flex-direction:column;outline:none;font-family:var(--sans)}
+.ms-o-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px;text-align:center}
+.ms-o-big{font-size:clamp(56px,13vw,150px);font-weight:600;letter-spacing:2px;line-height:1;margin:0;color:#eef1ea}
+.ms-o-fix{font-weight:300;color:#c9d3cc}
+.ms-o-hand{font-family:var(--sans)}
+.ms-o-word{font-family:var(--serif);font-size:clamp(34px,6vw,64px);margin:0;letter-spacing:1px;color:#eef1ea}
+.ms-o-word.ms-execute{color:#e6a98f}
+.ms-o-word.ms-imagine{color:#9fc4cc}
+.ms-o-small{font-size:clamp(15px,2vw,20px);color:#c9d3cc;margin:0}
+.ms-o-wide{max-width:640px;line-height:1.5}
+.ms-o-foot{display:flex;align-items:center;gap:16px;padding:16px 24px;font-size:11px;letter-spacing:.6px;color:#8fa3a0;text-transform:uppercase}
+.ms-o-bar{flex:1;height:2px;background:#33494d;position:relative}
+.ms-o-bar i{position:absolute;left:0;top:0;bottom:0;background:#8fa3a0}
+@media (max-width:760px){.ms-modes{grid-template-columns:1fr}}

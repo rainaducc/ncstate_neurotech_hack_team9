@@ -1,4 +1,4 @@
-// agent-client.js — connects Fieldnote to the NeuroSym agent server (fieldnote_server.py).
+// agent-client.js — connects NeuroBridge to the NeuroSym agent server (fieldnote_server.py).
 // Loaded before app.js. If the server is unreachable (e.g. opened as file://),
 // window.AI.connected stays false and the UI keeps its original scripted behavior.
 window.AI = { connected: false, llm: false };

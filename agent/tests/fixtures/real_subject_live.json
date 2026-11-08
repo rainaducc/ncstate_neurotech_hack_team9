@@ -1,0 +1,156 @@
+{
+  "schema_version": "neurosym-report-0.4",
+  "header": "Research prototype - not a diagnosis - for clinician review.",
+  "recording_id": "eegmmidb:S001",
+  "simulated": null,
+  "context": {
+    "site": "eegmmidb"
+  },
+  "data_quality": {
+    "qc_passed": true,
+    "qc_reasons": [],
+    "n_trials": 90
+  },
+  "features": [
+    {
+      "name": "execute_mu_li_left",
+      "value": -0.027475614788398463,
+      "z": -0.007094232745654947,
+      "percentile": 49.71698343502645
+    },
+    {
+      "name": "execute_mu_li_right",
+      "value": 0.6928619293956108,
+      "z": 0.6756417627561123,
+      "percentile": 75.03659403320464
+    },
+    {
+      "name": "execute_mu_sym",
+      "value": -1.4990004100343917,
+      "z": -1.108079120593026,
+      "percentile": 13.391382366854836
+    },
+    {
+      "name": "execute_beta_li_left",
+      "value": -0.7672739329626131,
+      "z": -0.9603855733931512,
+      "percentile": 16.84305980619226
+    },
+    {
+      "name": "execute_beta_li_right",
+      "value": 1.1763103110690951,
+      "z": 1.1215320665412636,
+      "percentile": 86.89692750323712
+    },
+    {
+      "name": "execute_beta_sym",
+      "value": -1.277391418894856,
+      "z": -1.5353358942366124,
+      "percentile": 6.2350670767653105
+    },
+    {
+      "name": "imagine_mu_li_left",
+      "value": -2.8405784093023447,
+      "z": -2.1456523506941205,
+      "percentile": 1.5950362711635302
+    },
+    {
+      "name": "imagine_mu_li_right",
+      "value": 1.6318846318230724,
+      "z": 0.7990902166283307,
+      "percentile": 78.7880948960343
+    },
+    {
+      "name": "imagine_mu_sym",
+      "value": -1.1511243654164223,
+      "z": -0.6026066005484869,
+      "percentile": 27.338521416089705
+    },
+    {
+      "name": "imagine_beta_li_left",
+      "value": -0.5088906103683233,
+      "z": -0.8897107782815652,
+      "percentile": 18.681060252623066
+    },
+    {
+      "name": "imagine_beta_li_right",
+      "value": 0.40904942862521393,
+      "z": -0.020919451627987168,
+      "percentile": 49.16549549318
+    },
+    {
+      "name": "imagine_beta_sym",
+      "value": -0.7098179718873785,
+      "z": -0.5859561844985337,
+      "percentile": 27.89524797303551
+    }
+  ],
+  "deviation_score": 2.9377057527286734,
+  "scores": {
+    "omnibus": {
+      "value": 2.9377057527286734,
+      "conformal_p": 0.6375
+    },
+    "maxz": {
+      "value": 2.1456523506941205,
+      "conformal_p": 0.3125
+    },
+    "within": {
+      "value": 3.4206675894399226,
+      "conformal_p": 0.0625
+    }
+  },
+  "within_subject_permutation_p": 0.016983016983016984,
+  "p_value": 0.125,
+  "n_calibration": 79,
+  "answer": "INCONCLUSIVE_REPEAT",
+  "decision_rule": {
+    "combination": "conformal p of min over component conformal p-values",
+    "review_if_p_below": 0.05,
+    "within_if_p_above": 0.2,
+    "otherwise": "INCONCLUSIVE_REPEAT",
+    "qc_fail_or_halves_disagree": "INCONCLUSIVE_REPEAT"
+  },
+  "consistency": {
+    "status": "agree",
+    "odd_p_value": 0.1375,
+    "even_p_value": 0.6875
+  },
+  "top_contributors": [
+    {
+      "feature": "imagine_mu_li_left",
+      "contribution_to_distance_squared": 4.655095645205517,
+      "z": -2.1456523506941205
+    },
+    {
+      "feature": "execute_beta_sym",
+      "contribution_to_distance_squared": 1.3186686772518335,
+      "z": -1.5353358942366124
+    },
+    {
+      "feature": "imagine_mu_li_right",
+      "contribution_to_distance_squared": 1.001096477671842,
+      "z": 0.7990902166283307
+    },
+    {
+      "feature": "execute_mu_sym",
+      "contribution_to_distance_squared": 0.8199331010956614,
+      "z": -1.108079120593026
+    },
+    {
+      "feature": "execute_beta_li_right",
+      "contribution_to_distance_squared": 0.31881016683081626,
+      "z": 1.1215320665412636
+    }
+  ],
+  "limitations": [
+    "Reference is 1 public dataset (PhysioNet EEGMMIDB) with no age, sex or handedness covariates.",
+    "Smallest attainable p-value is 1/(n_cal+1) = 0.0125.",
+    "Half-recording p-values use the full-recording calibration and are noisier by construction."
+  ],
+  "audit": {
+    "model_version": "0.1.0",
+    "backend": "gaussian_ols_intercept+ledoitwolf",
+    "model_sha256": "e0d40bcdd9ed1e1b31eeecedb62da7e29024aae910da173c6688102bc7c1d080"
+  }
+}

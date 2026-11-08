@@ -1,0 +1,277 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "neurosym-report-0.4",
+  "title": "NeuroSym Phase 3b recording report",
+  "description": "Research prototype - not a diagnosis - for clinician review.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "header",
+    "recording_id",
+    "simulated",
+    "context",
+    "data_quality",
+    "features",
+    "deviation_score",
+    "p_value",
+    "n_calibration",
+    "answer",
+    "decision_rule",
+    "consistency",
+    "top_contributors",
+    "limitations",
+    "audit",
+    "scores",
+    "within_subject_permutation_p"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "neurosym-report-0.4"
+      ]
+    },
+    "header": {
+      "type": "string"
+    },
+    "recording_id": {
+      "type": "string"
+    },
+    "simulated": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "context": {
+      "type": "object"
+    },
+    "data_quality": {
+      "type": "object",
+      "required": [
+        "qc_passed",
+        "qc_reasons"
+      ],
+      "properties": {
+        "qc_passed": {
+          "type": "boolean"
+        },
+        "qc_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "n_trials": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "value",
+          "z",
+          "percentile"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "z": {
+            "type": "number"
+          },
+          "percentile": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "deviation_score": {
+      "type": "number"
+    },
+    "p_value": {
+      "type": "number",
+      "description": "Conformal p of the combined statistic min_k p_k; drives the answer."
+    },
+    "n_calibration": {
+      "type": "integer"
+    },
+    "answer": {
+      "type": "string",
+      "enum": [
+        "OUTSIDE_NORMATIVE_RANGE_REVIEW",
+        "WITHIN_NORMATIVE_RANGE",
+        "INCONCLUSIVE_REPEAT"
+      ]
+    },
+    "decision_rule": {
+      "type": "object"
+    },
+    "consistency": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "status",
+        "odd_p_value",
+        "even_p_value"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "agree",
+            "disagree"
+          ]
+        },
+        "odd_p_value": {
+          "type": "number"
+        },
+        "even_p_value": {
+          "type": "number"
+        }
+      }
+    },
+    "top_contributors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "feature",
+          "contribution_to_distance_squared",
+          "z"
+        ],
+        "properties": {
+          "feature": {
+            "type": "string"
+          },
+          "contribution_to_distance_squared": {
+            "type": "number"
+          },
+          "z": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audit": {
+      "type": "object",
+      "required": [
+        "model_version",
+        "backend",
+        "model_sha256"
+      ],
+      "properties": {
+        "model_version": {
+          "type": "string"
+        },
+        "backend": {
+          "type": "string"
+        },
+        "model_sha256": {
+          "type": "string"
+        }
+      }
+    },
+    "scores": {
+      "type": "object",
+      "required": [
+        "omnibus",
+        "maxz",
+        "within"
+      ],
+      "description": "Component scores: omnibus Mahalanobis, max |z| asymmetry, within-subject permutation max |t|; each with its LOSO conformal p (null when unavailable).",
+      "properties": {
+        "omnibus": {
+          "type": "object",
+          "required": [
+            "value",
+            "conformal_p"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "conformal_p": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "maxz": {
+          "type": "object",
+          "required": [
+            "value",
+            "conformal_p"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "conformal_p": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "within": {
+          "type": "object",
+          "required": [
+            "value",
+            "conformal_p"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "conformal_p": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "within_subject_permutation_p": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Raw FWER-corrected mirror-symmetry permutation p. Not used for decisions without calibration."
+    }
+  }
+}
