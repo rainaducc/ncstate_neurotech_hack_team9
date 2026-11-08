@@ -1,0 +1,137 @@
+{
+  "schema_version": "0.1",
+  "model_version": "neurosym-mock",
+  "recording_id": "MOCK_WITHIN",
+  "answer": "WITHIN_NORMATIVE_RANGE",
+  "answer_reasons": [
+    "All deviation scores within healthy calibration range."
+  ],
+  "context": {
+    "age": 22,
+    "sex": "F",
+    "handedness": "right",
+    "medications": [],
+    "sleep_h": 7,
+    "caffeine": false,
+    "symptoms": null,
+    "affected_side": null
+  },
+  "data_quality": {
+    "status": "PASS",
+    "bad_channels": [],
+    "clean_trials_per_condition": {
+      "execute_left": 14,
+      "execute_right": 15,
+      "imagine_left": 13,
+      "imagine_right": 15
+    },
+    "sync": {
+      "method": "lsl_markers",
+      "residual_ms": 2.1
+    },
+    "notes": []
+  },
+  "features": [
+    {
+      "name": "erd_mu_execute_C3_righthand",
+      "label": "Left hemisphere, right-hand movement (mu)",
+      "value": -2.4,
+      "unit": "dB",
+      "z": -0.3,
+      "percentile": 38,
+      "hemisphere": "left",
+      "hand": "right",
+      "condition": "execute"
+    },
+    {
+      "name": "erd_mu_execute_C4_lefthand",
+      "label": "Right hemisphere, left-hand movement (mu)",
+      "value": -2.1,
+      "unit": "dB",
+      "z": -0.1,
+      "percentile": 46,
+      "hemisphere": "right",
+      "hand": "left",
+      "condition": "execute"
+    },
+    {
+      "name": "sym_mu_execute",
+      "label": "Hemisphere symmetry, real movement (mu)",
+      "value": -0.3,
+      "unit": "dB",
+      "z": -0.2,
+      "percentile": 42,
+      "condition": "execute"
+    },
+    {
+      "name": "li_mu_execute_righthand",
+      "label": "Lateralization, right hand",
+      "value": 1.2,
+      "unit": "dB",
+      "z": 0.4,
+      "percentile": 66,
+      "hand": "right",
+      "condition": "execute"
+    },
+    {
+      "name": "li_mu_execute_lefthand",
+      "label": "Lateralization, left hand",
+      "value": 1.0,
+      "unit": "dB",
+      "z": 0.2,
+      "percentile": 58,
+      "hand": "left",
+      "condition": "execute"
+    }
+  ],
+  "symmetry": {
+    "execute_mu": {
+      "value": -0.3,
+      "z": -0.2
+    }
+  },
+  "three_state_profile": {
+    "left_hemisphere": {
+      "imagine": -1.1,
+      "execute": -2.4
+    },
+    "right_hemisphere": {
+      "imagine": -0.9,
+      "execute": -2.1
+    }
+  },
+  "longitudinal": null,
+  "scores": {
+    "omnibus": {
+      "score": 2.1,
+      "p": 0.61
+    },
+    "asymmetry": {
+      "score": 0.4,
+      "p": 0.72
+    },
+    "within_subject": {
+      "p": 0.55
+    },
+    "combined": {
+      "p": 0.61
+    }
+  },
+  "top_contributors": [
+    {
+      "feature": "li_mu_execute_righthand",
+      "z": 0.4
+    }
+  ],
+  "consistency": "odd/even halves agree",
+  "confound_warnings": [],
+  "guarantee_note": "For healthy people recorded like the calibration set, the chance of a false OUTSIDE_NORMATIVE_RANGE_REVIEW is at most 5%.",
+  "limitations": [
+    "Research prototype; not a diagnosis.",
+    "Calibrated on public healthy datasets (PhysioNet); device and task differ from this recording."
+  ],
+  "plots": [],
+  "audit": {
+    "created_utc": "2026-11-08T07:00:00Z"
+  }
+}

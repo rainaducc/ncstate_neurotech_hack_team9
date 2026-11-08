@@ -1,0 +1,155 @@
+{
+  "schema_version": "0.1",
+  "model_version": "neurosym-mock",
+  "recording_id": "MOCK_OUTSIDE_WEAK_LEFT",
+  "answer": "OUTSIDE_NORMATIVE_RANGE_REVIEW",
+  "answer_reasons": [
+    "Targeted asymmetry score outside healthy range (p = 0.012).",
+    "Within-subject test: left hemisphere response weaker than right (p = 0.004)."
+  ],
+  "context": {
+    "age": 22,
+    "sex": "F",
+    "handedness": "right",
+    "medications": [
+      "levodopa"
+    ],
+    "sleep_h": 7,
+    "caffeine": false,
+    "symptoms": null,
+    "affected_side": "right"
+  },
+  "data_quality": {
+    "status": "PASS",
+    "bad_channels": [],
+    "clean_trials_per_condition": {
+      "execute_left": 14,
+      "execute_right": 15,
+      "imagine_left": 13,
+      "imagine_right": 15
+    },
+    "sync": {
+      "method": "lsl_markers",
+      "residual_ms": 2.1
+    },
+    "notes": []
+  },
+  "features": [
+    {
+      "name": "erd_mu_execute_C3_righthand",
+      "label": "Left hemisphere, right-hand movement (mu)",
+      "value": -0.6,
+      "unit": "dB",
+      "z": -2.9,
+      "percentile": 0.2,
+      "hemisphere": "left",
+      "hand": "right",
+      "condition": "execute"
+    },
+    {
+      "name": "erd_mu_execute_C4_lefthand",
+      "label": "Right hemisphere, left-hand movement (mu)",
+      "value": -2.1,
+      "unit": "dB",
+      "z": -0.1,
+      "percentile": 46,
+      "hemisphere": "right",
+      "hand": "left",
+      "condition": "execute"
+    },
+    {
+      "name": "sym_mu_execute",
+      "label": "Hemisphere symmetry, real movement (mu)",
+      "value": 1.5,
+      "unit": "dB",
+      "z": 3.1,
+      "percentile": 99.9,
+      "condition": "execute"
+    },
+    {
+      "name": "li_mu_execute_righthand",
+      "label": "Lateralization, right hand",
+      "value": -0.2,
+      "unit": "dB",
+      "z": -2.4,
+      "percentile": 0.8,
+      "hand": "right",
+      "condition": "execute"
+    },
+    {
+      "name": "li_mu_execute_lefthand",
+      "label": "Lateralization, left hand",
+      "value": 1.0,
+      "unit": "dB",
+      "z": 0.2,
+      "percentile": 58,
+      "hand": "left",
+      "condition": "execute"
+    }
+  ],
+  "symmetry": {
+    "execute_mu": {
+      "value": 1.5,
+      "z": 3.1
+    }
+  },
+  "three_state_profile": {
+    "left_hemisphere": {
+      "imagine": -0.3,
+      "execute": -0.6
+    },
+    "right_hemisphere": {
+      "imagine": -0.9,
+      "execute": -2.1
+    }
+  },
+  "longitudinal": {
+    "previous_visit": "MOCK_OUTSIDE_WEAK_LEFT_V0",
+    "changes": [
+      {
+        "feature": "sym_mu_execute",
+        "rci": 2.3,
+        "direction": "asymmetry increased"
+      }
+    ]
+  },
+  "scores": {
+    "omnibus": {
+      "score": 6.8,
+      "p": 0.04
+    },
+    "asymmetry": {
+      "score": 3.1,
+      "p": 0.012
+    },
+    "within_subject": {
+      "p": 0.004
+    },
+    "combined": {
+      "p": 0.012
+    }
+  },
+  "top_contributors": [
+    {
+      "feature": "sym_mu_execute",
+      "z": 3.1
+    },
+    {
+      "feature": "erd_mu_execute_C3_righthand",
+      "z": -2.9
+    }
+  ],
+  "consistency": "odd/even halves agree",
+  "confound_warnings": [
+    "Dopaminergic medication (levodopa) can change beta activity; beta features less reliable."
+  ],
+  "guarantee_note": "For healthy people recorded like the calibration set, the chance of a false OUTSIDE_NORMATIVE_RANGE_REVIEW is at most 5%.",
+  "limitations": [
+    "Research prototype; not a diagnosis.",
+    "Calibrated on public healthy datasets (PhysioNet); device and task differ from this recording."
+  ],
+  "plots": [],
+  "audit": {
+    "created_utc": "2026-11-08T07:00:00Z"
+  }
+}
