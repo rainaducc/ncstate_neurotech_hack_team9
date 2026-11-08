@@ -1,0 +1,194 @@
+{
+  "schema_version": "neurosym-report-0.4",
+  "header": "Research prototype - not a diagnosis - for clinician review.",
+  "recording_id": "LIVE_FINAL",
+  "simulated": {
+    "source": "NeuroSymSimEEG",
+    "level": "stream"
+  },
+  "context": {
+    "site": "ant_eego_live",
+    "participant": "P01",
+    "age": 22,
+    "sex": "F",
+    "handedness": "right",
+    "medications": [
+      "sertraline"
+    ],
+    "mu_band_source": "fixed_8_13"
+  },
+  "data_quality": {
+    "qc_passed": false,
+    "qc_reasons": [
+      "Only 6 clean execute left-hand trials (need 8).",
+      "Only 6 clean execute right-hand trials (need 8).",
+      "Only 6 clean imagine left-hand trials (need 8).",
+      "Only 6 clean imagine right-hand trials (need 8)."
+    ],
+    "n_trials": 24
+  },
+  "features": [
+    {
+      "name": "execute_mu_li_left",
+      "value": 0.8523262288180632,
+      "z": 0.5976799574443844,
+      "percentile": 72.49732493509738
+    },
+    {
+      "name": "execute_mu_li_right",
+      "value": 0.6029158936135137,
+      "z": 0.6114908645672681,
+      "percentile": 72.95626677971934
+    },
+    {
+      "name": "execute_mu_sym",
+      "value": 0.34216647957582635,
+      "z": 0.08593866298886484,
+      "percentile": 53.42424117176652
+    },
+    {
+      "name": "execute_beta_li_left",
+      "value": -0.05456736064220946,
+      "z": -0.21925142629849562,
+      "percentile": 41.32270987418084
+    },
+    {
+      "name": "execute_beta_li_right",
+      "value": 1.2730716243135258,
+      "z": 1.2162114811657172,
+      "percentile": 88.80478143934307
+    },
+    {
+      "name": "execute_beta_sym",
+      "value": -0.44330613227220583,
+      "z": -0.615470731362023,
+      "percentile": 26.912194633187603
+    },
+    {
+      "name": "imagine_mu_li_left",
+      "value": 0.29883030290540774,
+      "z": 0.1691861835819416,
+      "percentile": 56.717490148297934
+    },
+    {
+      "name": "imagine_mu_li_right",
+      "value": 0.34917044671523717,
+      "z": -0.16162772326713024,
+      "percentile": 43.57995121718577
+    },
+    {
+      "name": "imagine_mu_sym",
+      "value": 0.01919630985952403,
+      "z": 0.15277483732007643,
+      "percentile": 56.07120791633875
+    },
+    {
+      "name": "imagine_beta_li_left",
+      "value": 0.913545989082445,
+      "z": 0.8098966849623788,
+      "percentile": 79.10002213577256
+    },
+    {
+      "name": "imagine_beta_li_right",
+      "value": 0.16223441539804953,
+      "z": -0.37513141380327575,
+      "percentile": 35.37813676393287
+    },
+    {
+      "name": "imagine_beta_sym",
+      "value": 0.36902624882423063,
+      "z": 0.6390441095175128,
+      "percentile": 73.86028813648674
+    }
+  ],
+  "deviation_score": 1.7707768736094713,
+  "scores": {
+    "omnibus": {
+      "value": 1.7707768736094713,
+      "conformal_p": 0.9625
+    },
+    "maxz": {
+      "value": 1.2162114811657172,
+      "conformal_p": 0.8875
+    },
+    "within": {
+      "value": 2.0233500719144244,
+      "conformal_p": 0.4875
+    }
+  },
+  "within_subject_permutation_p": 0.4785214785214785,
+  "p_value": 0.6625,
+  "n_calibration": 79,
+  "answer": "INCONCLUSIVE_REPEAT",
+  "decision_rule": {
+    "combination": "conformal p of min over component conformal p-values",
+    "review_if_p_below": 0.05,
+    "within_if_p_above": 0.2,
+    "otherwise": "INCONCLUSIVE_REPEAT",
+    "qc_fail_or_halves_disagree": "INCONCLUSIVE_REPEAT"
+  },
+  "consistency": {
+    "status": "agree",
+    "odd_p_value": 0.575,
+    "even_p_value": 0.725
+  },
+  "top_contributors": [
+    {
+      "feature": "execute_beta_li_right",
+      "contribution_to_distance_squared": 1.5669621076325206,
+      "z": 1.2162114811657172
+    },
+    {
+      "feature": "imagine_beta_li_left",
+      "contribution_to_distance_squared": 0.6253984632813449,
+      "z": 0.8098966849623788
+    },
+    {
+      "feature": "execute_mu_li_left",
+      "contribution_to_distance_squared": 0.23108400498677678,
+      "z": 0.5976799574443844
+    },
+    {
+      "feature": "imagine_beta_sym",
+      "contribution_to_distance_squared": 0.22266602172661748,
+      "z": 0.6390441095175128
+    },
+    {
+      "feature": "execute_mu_li_right",
+      "contribution_to_distance_squared": 0.1706323154682229,
+      "z": 0.6114908645672681
+    }
+  ],
+  "limitations": [
+    "Reference is 1 public dataset (PhysioNet EEGMMIDB) with no age, sex or handedness covariates.",
+    "Smallest attainable p-value is 1/(n_cal+1) = 0.0125.",
+    "Half-recording p-values use the full-recording calibration and are noisier by construction.",
+    "Recorded live on an ANT 24-channel cap (not PhysioNet's 64-channel system) with simplified live cleaning (no ICA/AutoReject, fixed 8-13 Hz mu): the false-review guarantee is not established for this device."
+  ],
+  "audit": {
+    "model_version": "0.1.0",
+    "backend": "gaussian_ols_intercept+ledoitwolf",
+    "model_sha256": "e0d40bcdd9ed1e1b31eeecedb62da7e29024aae910da173c6688102bc7c1d080"
+  },
+  "exploratory": {
+    "note": "Arm-movement blocks recorded with the same C3/C4 measurement. Not scored: the model has no healthy reference for these tasks.",
+    "blocks": [
+      {
+        "task": "reach",
+        "hand": "left",
+        "n_trials": 6,
+        "n_opposite_side_stronger": 5,
+        "mean_opposite_side_erd_db": -3.06,
+        "mean_same_side_erd_db": -2.21
+      },
+      {
+        "task": "reach",
+        "hand": "right",
+        "n_trials": 6,
+        "n_opposite_side_stronger": 5,
+        "mean_opposite_side_erd_db": -2.72,
+        "mean_same_side_erd_db": -2.12
+      }
+    ]
+  }
+}

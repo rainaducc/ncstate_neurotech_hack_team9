@@ -1,0 +1,167 @@
+{
+  "schema_version": "neurosym-report-0.4",
+  "header": "Research prototype - not a diagnosis - for clinician review.",
+  "recording_id": "SIM_20261108_053401",
+  "simulated": {
+    "source": "eego 24 (simulated)",
+    "level": "stream"
+  },
+  "context": {
+    "site": "ant_eego_live",
+    "participant": "SIM",
+    "age": 22,
+    "sex": "F",
+    "handedness": "right",
+    "mu_band_source": "fixed_8_13",
+    "preprocessing": "live: A18 average reference, 250 Hz, 1-40 Hz, amplitude rejection",
+    "simulated_stream": "eego 24 (simulated)"
+  },
+  "data_quality": {
+    "qc_passed": true,
+    "qc_reasons": [],
+    "n_trials": 24
+  },
+  "features": [
+    {
+      "name": "execute_mu_li_left",
+      "value": -0.8642202418809416,
+      "z": -0.5822709704658289,
+      "percentile": 28.01920879333914
+    },
+    {
+      "name": "execute_mu_li_right",
+      "value": 1.2178751310776326,
+      "z": 1.0500892651507225,
+      "percentile": 85.31614631263682
+    },
+    {
+      "name": "execute_mu_sym",
+      "value": -2.1047647883935237,
+      "z": -1.500924247508358,
+      "percentile": 6.668757791116494
+    },
+    {
+      "name": "execute_beta_li_left",
+      "value": -1.1256887413325376,
+      "z": -1.333096396646119,
+      "percentile": 9.125008586815452
+    },
+    {
+      "name": "execute_beta_li_right",
+      "value": 2.3044194256645194,
+      "z": 2.225368992902461,
+      "percentile": 98.6971761342555
+    },
+    {
+      "name": "execute_beta_sym",
+      "value": -2.3600770214475504,
+      "z": -2.7293681881843592,
+      "percentile": 0.3172790569952142
+    },
+    {
+      "name": "imagine_mu_li_left",
+      "value": -0.2766570041591602,
+      "z": -0.2551485611104743,
+      "percentile": 39.9304179334793
+    },
+    {
+      "name": "imagine_mu_li_right",
+      "value": 0.6386613930604209,
+      "z": 0.0551930999685241,
+      "percentile": 52.20076870071863
+    },
+    {
+      "name": "imagine_mu_sym",
+      "value": -1.0303060555444232,
+      "z": -0.5246246332467117,
+      "percentile": 29.992207952371054
+    },
+    {
+      "name": "imagine_beta_li_left",
+      "value": -0.37178081411675556,
+      "z": -0.7258842618076501,
+      "percentile": 23.39548626864547
+    },
+    {
+      "name": "imagine_beta_li_right",
+      "value": 0.8137302476359953,
+      "z": 0.5598506769078381,
+      "percentile": 71.22093530101354
+    },
+    {
+      "name": "imagine_beta_sym",
+      "value": -1.4917022631857124,
+      "z": -1.47376599831504,
+      "percentile": 7.0272303039827
+    }
+  ],
+  "deviation_score": 3.3723386387431464,
+  "scores": {
+    "omnibus": {
+      "value": 3.3723386387431464,
+      "conformal_p": 0.4625
+    },
+    "maxz": {
+      "value": 2.7293681881843592,
+      "conformal_p": 0.1625
+    },
+    "within": {
+      "value": 4.79234418472274,
+      "conformal_p": 0.025
+    }
+  },
+  "within_subject_permutation_p": 0.004995004995004995,
+  "p_value": 0.0375,
+  "n_calibration": 79,
+  "answer": "OUTSIDE_NORMATIVE_RANGE_REVIEW",
+  "decision_rule": {
+    "combination": "conformal p of min over component conformal p-values",
+    "review_if_p_below": 0.05,
+    "within_if_p_above": 0.2,
+    "otherwise": "INCONCLUSIVE_REPEAT",
+    "qc_fail_or_halves_disagree": "INCONCLUSIVE_REPEAT"
+  },
+  "consistency": {
+    "status": "agree",
+    "odd_p_value": 0.0125,
+    "even_p_value": 0.1375
+  },
+  "top_contributors": [
+    {
+      "feature": "execute_beta_sym",
+      "contribution_to_distance_squared": 5.1616275396328515,
+      "z": -2.7293681881843592
+    },
+    {
+      "feature": "execute_beta_li_right",
+      "contribution_to_distance_squared": 2.7989636497539454,
+      "z": 2.225368992902461
+    },
+    {
+      "feature": "imagine_beta_sym",
+      "contribution_to_distance_squared": 1.9410362120265965,
+      "z": -1.47376599831504
+    },
+    {
+      "feature": "execute_mu_sym",
+      "contribution_to_distance_squared": 1.6409030936265643,
+      "z": -1.500924247508358
+    },
+    {
+      "feature": "execute_beta_li_left",
+      "contribution_to_distance_squared": 0.23867852294488534,
+      "z": -1.333096396646119
+    }
+  ],
+  "limitations": [
+    "Reference is 1 public dataset (PhysioNet EEGMMIDB) with no age, sex or handedness covariates.",
+    "Smallest attainable p-value is 1/(n_cal+1) = 0.0125.",
+    "Half-recording p-values use the full-recording calibration and are noisier by construction.",
+    "Recorded live on an ANT 24-channel cap (not PhysioNet's 64-channel system) with simplified live cleaning (no ICA/AutoReject, fixed 8-13 Hz mu): the false-review guarantee is not established for this device."
+  ],
+  "audit": {
+    "model_version": "0.1.0",
+    "backend": "gaussian_ols_intercept+ledoitwolf",
+    "model_sha256": "e0d40bcdd9ed1e1b31eeecedb62da7e29024aae910da173c6688102bc7c1d080"
+  }
+}

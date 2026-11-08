@@ -2,7 +2,7 @@
 
 An EEG-based normative-model system with a guarded AI copilot on **both sides of the clinic**:
 
-- **Patient side (Fieldnote UI)** — a pre-visit profile: the patient tells their story in 4 guided questions, an AI guide drafts the account *in their own words* (the patient confirms every word), and a recording assistant gives feedback on motor tasks using only numbers computed from the recording.
+- **Patient side (Fieldnote UI)** — a pre-visit profile: the patient tells their story in 4 guided questions, an AI guide drafts the account *in their own words* (the patient confirms every word), and a **cued movement session** with the ANT eego headset runs the model's own EEG task (move / imagine, left / right) and sends the cue markers to the model's live scorer. Patient and clinician share **one thread per patient** (messages, consent-scoped profile sharing, session and report updates) synced through the server. See `agent/RUN_FIELDNOTE.md`.
 - **Clinician side (Streamlit app)** — the NeuroSym model report (WITHIN_NORMATIVE_RANGE / INCONCLUSIVE_REPEAT / OUTSIDE_NORMATIVE_RANGE_REVIEW) visualized on the normative reference, plus a tool-calling copilot that can only cite report numbers.
 
 **Neither side lets the AI practice medicine.** All agent output passes `check_text()` guardrails: mandatory research-prototype header, answer labels verbatim, no diagnostic language, only numbers that appear in the report/recording. Violating LLM output is regenerated once, then falls back to deterministic templates. Every interaction is written to an audit log.
@@ -36,9 +36,9 @@ demo/           Presentation materials
 ```bash
 cd agent
 python3 -m venv .venv && source .venv/bin/activate
-pip install jsonschema pytest anthropic streamlit plotly
+pip install jsonschema pytest anthropic streamlit plotly pylsl
 
-pytest -q                       # 15 passed
+pytest -q                       # 28 passed
 python fieldnote_server.py      # patient UI  → http://localhost:8080
 streamlit run app.py            # clinician app → http://localhost:8501
 ```

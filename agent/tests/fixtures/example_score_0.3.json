@@ -1,0 +1,183 @@
+{
+  "schema_version": "neurosym-report-0.3",
+  "header": "Research prototype - not a diagnosis - for clinician review.",
+  "recording_id": "cho2017:S10",
+  "context": {
+    "site": "cho2017",
+    "age": 18.0,
+    "sex": "male",
+    "handedness": "right",
+    "medications": null,
+    "hours_slept": null,
+    "caffeine_last_3h": null,
+    "symptoms": null,
+    "affected_side": null,
+    "notes": null
+  },
+  "data_quality": {
+    "site_in_reference": true,
+    "feature_input": "phase3_table"
+  },
+  "sync": null,
+  "features": [
+    {
+      "name": "execute_mu_li_left",
+      "value": -0.6372003966489728,
+      "z": -3.7820971852749796,
+      "percentile": 0.007775631004904075
+    },
+    {
+      "name": "execute_mu_li_right",
+      "value": 3.175448117731135,
+      "z": 4.534503070083573,
+      "percentile": 99.9997113036888
+    },
+    {
+      "name": "execute_mu_sym",
+      "value": -1.1029004953168,
+      "z": -2.868320208017687,
+      "percentile": 0.20632882999051166
+    },
+    {
+      "name": "execute_beta_li_left",
+      "value": -0.8480763801943582,
+      "z": -1.8955571740127153,
+      "percentile": 2.9009312379884946
+    },
+    {
+      "name": "execute_beta_li_right",
+      "value": 0.9251547255923827,
+      "z": 5.319003598513891,
+      "percentile": 99.99999478314638
+    },
+    {
+      "name": "execute_beta_sym",
+      "value": -0.7311214748226451,
+      "z": -2.292372575405028,
+      "percentile": 1.0942076573753186
+    },
+    {
+      "name": "imagine_mu_li_left",
+      "value": 0.6563389162954725,
+      "z": -0.2953573456995073,
+      "percentile": 38.38604568764726
+    },
+    {
+      "name": "imagine_mu_li_right",
+      "value": 4.8190016289739095,
+      "z": 7.038834827088219,
+      "percentile": 99.99999999990308
+    },
+    {
+      "name": "imagine_mu_sym",
+      "value": -0.9149767373339852,
+      "z": -2.766555080146458,
+      "percentile": 0.28326006901442047
+    },
+    {
+      "name": "imagine_beta_li_left",
+      "value": -0.725104448144076,
+      "z": 4.442132191874313,
+      "percentile": 99.99955464096297
+    },
+    {
+      "name": "imagine_beta_li_right",
+      "value": 0.005220947165272882,
+      "z": 5.591855642114466,
+      "percentile": 99.99999887672215
+    },
+    {
+      "name": "imagine_beta_sym",
+      "value": -1.0645371307711033,
+      "z": -3.7385573055925914,
+      "percentile": 0.009253965397382859
+    }
+  ],
+  "symmetry": {
+    "execute_mu_sym": -1.1029004953168,
+    "execute_beta_sym": -0.7311214748226451,
+    "imagine_mu_sym": -0.9149767373339852,
+    "imagine_beta_sym": -1.0645371307711033
+  },
+  "three_state_profile": null,
+  "longitudinal": null,
+  "deviation_score": 14.513558105143968,
+  "p_value": null,
+  "answer": "INCONCLUSIVE_REPEAT",
+  "top_contributors": [
+    {
+      "feature": "imagine_mu_li_right",
+      "contribution_to_distance_squared": 53.55708150353973,
+      "z": 7.038834827088219
+    },
+    {
+      "feature": "imagine_beta_li_right",
+      "contribution_to_distance_squared": 35.77918645866595,
+      "z": 5.591855642114466
+    },
+    {
+      "feature": "execute_beta_li_right",
+      "contribution_to_distance_squared": 29.636515770562887,
+      "z": 5.319003598513891
+    },
+    {
+      "feature": "execute_mu_li_right",
+      "contribution_to_distance_squared": 26.260256089556307,
+      "z": 4.534503070083573
+    },
+    {
+      "feature": "imagine_beta_li_left",
+      "contribution_to_distance_squared": 23.531383645447185,
+      "z": 4.442132191874313
+    }
+  ],
+  "consistency": null,
+  "confound_warnings": [],
+  "guarantee_note": "Phase 3 estimates are exploratory. Decision calibration is pending.",
+  "limitations": [
+    "Feature-table scoring has no raw-recording or sync verification.",
+    "Feature percentiles use the fitted Gaussian reference."
+  ],
+  "plots": [
+    "reference_review.png"
+  ],
+  "audit": {
+    "model_version": "0.1.0",
+    "model_sha256": "f22ad4e6f7fd61da19eb0926a35e7262030290b70e9c2f98e74a4cd9a35efd33",
+    "model_artifacts": {
+      "model.json": "75b5efe3671b8dc85110fe8f760d10eb0b6ecbe0af36e6cbcd20ee9d4a236516",
+      "pcn/model/execute_beta_li_left/idata.nc": "91bb4f7c537837318df91ef2ec10b770fdfa00e4e4bbd7a25fba8d1558a7d10c",
+      "pcn/model/execute_beta_li_left/regression_model.json": "e3a286999796872eba98b4a1b63a514ecd4c99bbe9b6a984d725ec74edc497b1",
+      "pcn/model/execute_beta_li_right/idata.nc": "bbeb5536cdf14f00b8068ebe6c76f8c741a0a71831ac3e5ec1180b32a7a18346",
+      "pcn/model/execute_beta_li_right/regression_model.json": "2e1591001ca6dc6830cfd7d3e3ae37f86c1f014063c483dfa5a405172f226f50",
+      "pcn/model/execute_beta_sym/idata.nc": "e27140a726cf312994119b07b9972139050fb84ee9dabc280c5c0a4d34071b6f",
+      "pcn/model/execute_beta_sym/regression_model.json": "e026faf822fe857cc1b54b924d223947829170099d3ce89786496894962d59c4",
+      "pcn/model/execute_mu_li_left/idata.nc": "846d3a78565635c384e0904f9d5dcc9914e70d0b7f7e8b1363a2e4c5081bcc97",
+      "pcn/model/execute_mu_li_left/regression_model.json": "a8a03bfe8ce80c41eabb72514b47ff50260e865df2ebccd314b470991c2bfe9f",
+      "pcn/model/execute_mu_li_right/idata.nc": "44e5b515cd0cc54c55ef8c7cdf40c4c6c8b283f0d29f9eb28d0a40955353f38f",
+      "pcn/model/execute_mu_li_right/regression_model.json": "d1f79eb733bb156348fb61d25b917bd1d4cefc83d415472a1b9e9520382f9cf6",
+      "pcn/model/execute_mu_sym/idata.nc": "088417bebec94497fe881c6695b36941356c8a261a5fbcc0fe7b0139227a0da0",
+      "pcn/model/execute_mu_sym/regression_model.json": "df965eaefc5ccfb06230ad6b4f5d5a1afe5887889e3909cb6ef31ccfde5add2c",
+      "pcn/model/imagine_beta_li_left/idata.nc": "9f7a976190b0b8fecec77ac88982da3bcdb2c6c58e11c2a8cffe8f283f31955b",
+      "pcn/model/imagine_beta_li_left/regression_model.json": "4b267ffca24d580cfb7190926d9d80104d7de76275bf3f99de67faeee848a521",
+      "pcn/model/imagine_beta_li_right/idata.nc": "96a25febf840179941b9cc5cd8582e8ec504b647c6e81354c452b6e8d3554c9a",
+      "pcn/model/imagine_beta_li_right/regression_model.json": "2fedce1d79d8cfa6729f6699741d129cc45ccddcb0391d3f04c8f71c33b5f82f",
+      "pcn/model/imagine_beta_sym/idata.nc": "2b9b64482da7148d79553d86b8b1b21cdb35d02bab4ec11bb004ca5d95db29d7",
+      "pcn/model/imagine_beta_sym/regression_model.json": "88105e86e6cb1bb743f9ee9058c65ee7a51f9db09102ec9ebc54e3605a7eefc7",
+      "pcn/model/imagine_mu_li_left/idata.nc": "9bd565c49d5378fad843897349ef35a4dcc59ac90e9a09e9d94ded6e0d3dc930",
+      "pcn/model/imagine_mu_li_left/regression_model.json": "6b189ce648e0b42a5e555bff2b40b1835073c0475dc5b2cf97e8336842e97657",
+      "pcn/model/imagine_mu_li_right/idata.nc": "79e93d08fac51f2fc8045fef7c7db3730480f4c2e1afd40587edc7e1d9923320",
+      "pcn/model/imagine_mu_li_right/regression_model.json": "988778cbf8101ea02148665cc5872f31b03a951befe727af05002e97b21c911d",
+      "pcn/model/imagine_mu_sym/idata.nc": "665e3deb6f9069ded813ce78c743f05440b768a47342117db0b12db15e5733f3",
+      "pcn/model/imagine_mu_sym/regression_model.json": "1e8e142423a639e093d9e4170cac2033cb67e0e080c036a85a16874eae69cd52",
+      "pcn/model/normative_model.json": "58fa8079bb313ec47737cf046bc1fba0ec2c92fe99dcdeba6b34b93438d8d6a7",
+      "combat.joblib": "6086efa8c9ecfa8710b2f372b7b1e676e82b796494173c687dce3d56e7af58e4"
+    },
+    "backend": "pcntoolkit_hbr_cuda",
+    "split": "test",
+    "feature_table_hashes": {
+      "reports/phase3/cohort/reference_features.csv": "e15ea5985fdc02cc98bad415ee8a976bda902abe8881e70efc8e03f62b366018",
+      "reports/cho2017/reference_features.csv": "78cf27d77c20edf475b7ad719cfd7276f5f215f239527a537a6f6ab33938fcc9"
+    }
+  }
+}
