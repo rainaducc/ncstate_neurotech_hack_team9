@@ -1,4 +1,4 @@
-# NeuroSym × Fieldnote — Team 9, NC State Neurotech Hack
+# NeuroBridge — Team 9, NC State Neurotech Hack
 
 An EEG-based normative-model system with a guarded AI copilot on **both sides of the clinic**:
 
